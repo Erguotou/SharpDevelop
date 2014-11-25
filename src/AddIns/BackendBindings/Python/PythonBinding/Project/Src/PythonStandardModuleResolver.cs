@@ -8,7 +8,7 @@ namespace ICSharpCode.PythonBinding
 {
 	public class PythonStandardModuleResolver : IPythonResolver
 	{
-		PythonStandardModules standardPythonModules = new PythonStandardModules();
+		public PythonStandardModules standardPythonModules = new PythonStandardModules();
 		
 		public ResolveResult Resolve(PythonResolverContext resolverContext)
 		{

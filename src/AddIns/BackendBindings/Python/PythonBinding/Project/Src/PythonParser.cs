@@ -127,7 +127,7 @@ namespace ICSharpCode.PythonBinding
 			return compilationUnit;
 		}
 		
-		public IResolver CreateResolver()
+		public virtual IResolver CreateResolver()
 		{
 			return new PythonResolver();
 		}

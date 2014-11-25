@@ -17,7 +17,7 @@ namespace ICSharpCode.PythonBinding
 	/// </summary>
 	public class PythonStandardModules : List<ICompletionEntry>
 	{
-		Dictionary<string, Type> moduleTypes = new Dictionary<string, Type>();
+		public Dictionary<string, Type> moduleTypes = new Dictionary<string, Type>();
 		
 		public PythonStandardModules()
 		{

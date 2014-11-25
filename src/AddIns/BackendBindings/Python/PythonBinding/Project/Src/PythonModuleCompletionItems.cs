@@ -15,22 +15,25 @@ namespace ICSharpCode.PythonBinding
 {
 	public class PythonModuleCompletionItems : List<ICompletionEntry>
 	{
-		DefaultCompilationUnit compilationUnit;
-		DefaultClass moduleClass;
+        protected DefaultCompilationUnit compilationUnit;
+		protected DefaultClass moduleClass;
 		DefaultProjectContent projectContent;
 		
 		static readonly BindingFlags PublicAndStaticBindingFlags = BindingFlags.Public | BindingFlags.Static;
-		
-		public PythonModuleCompletionItems(PythonStandardModuleType moduleType)
-		{
-			projectContent = new DefaultProjectContent();
-			compilationUnit = new DefaultCompilationUnit(projectContent);
-			moduleClass = new DefaultClass(compilationUnit, moduleType.Name);
-			
-			AddCompletionItemsForType(moduleType.Type);
-			AddStandardCompletionItems();
-		}
-		
+
+        public PythonModuleCompletionItems(PythonStandardModuleType moduleType, bool standard)
+        {
+            projectContent = new DefaultProjectContent();
+            compilationUnit = new DefaultCompilationUnit(projectContent);
+            moduleClass = new DefaultClass(compilationUnit, moduleType.Name);
+        }
+
+        public PythonModuleCompletionItems(PythonStandardModuleType moduleType) : this(moduleType, true)
+        {
+            AddCompletionItemsForType(moduleType.Type);
+            AddStandardCompletionItems();
+        }
+
 		void AddCompletionItemsForType(Type type)
 		{
 			foreach (MemberInfo member in type.GetMembers(PublicAndStaticBindingFlags)) {
@@ -66,7 +69,7 @@ namespace ICSharpCode.PythonBinding
 			return false;
 		}
 		
-		ICompletionEntry CreateCompletionItem(MemberInfo memberInfo, IClass c)
+		protected ICompletionEntry CreateCompletionItem(MemberInfo memberInfo, IClass c)
 		{
 			if (memberInfo is MethodInfo) {
 				return CreateMethodFromMethodInfo((MethodInfo)memberInfo, c);
@@ -78,7 +81,7 @@ namespace ICSharpCode.PythonBinding
 			return null;
 		}
 		
-		IMethod CreateMethodFromMethodInfo(MethodInfo methodInfo, IClass c)
+		protected IMethod CreateMethodFromMethodInfo(MethodInfo methodInfo, IClass c)
 		{
 			DefaultMethod method = new DefaultMethod(c, methodInfo.Name);
 			method.Documentation = GetDocumentation(methodInfo);

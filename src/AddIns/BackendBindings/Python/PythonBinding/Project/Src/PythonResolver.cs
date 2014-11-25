@@ -16,14 +16,14 @@ namespace ICSharpCode.PythonBinding
 		PythonImportResolver importResolver = new PythonImportResolver();
 		PythonNamespaceResolver namespaceResolver = new PythonNamespaceResolver();
 		PythonClassResolver classResolver = new PythonClassResolver();
-		PythonStandardModuleResolver standardModuleResolver = new PythonStandardModuleResolver();
+		protected PythonStandardModuleResolver standardModuleResolver = new PythonStandardModuleResolver();
 		PythonSelfResolver selfResolver = new PythonSelfResolver();
 		PythonStandardModuleMethodResolver methodResolver;
 		PythonMemberResolver memberResolver;
 		PythonLocalVariableResolver localVariableResolver;
 		PythonMethodReturnValueResolver methodReturnValueResolver;
 		
-		List<IPythonResolver> resolvers = new List<IPythonResolver>();
+		protected List<IPythonResolver> resolvers = new List<IPythonResolver>();
 		
 		public PythonResolver()
 		{
@@ -77,7 +77,7 @@ namespace ICSharpCode.PythonBinding
 			return CtrlSpace(resolverContext, context);
 		}
 		
-		List<ICompletionEntry> CtrlSpace(PythonResolverContext resolverContext, ExpressionContext expressionContext)
+		protected virtual List<ICompletionEntry> CtrlSpace(PythonResolverContext resolverContext, ExpressionContext expressionContext)
 		{
 			if (resolverContext.HasProjectContent) {
 				if (expressionContext == ExpressionContext.Namespace) {
