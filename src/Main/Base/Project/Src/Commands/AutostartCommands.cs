@@ -25,7 +25,8 @@ namespace ICSharpCode.SharpDevelop.Commands
 		
 		public void InitializeWorkbench()
 		{
-			app = new App();
+            if (System.Windows.Application.Current == null) 
+                app = new App();
 			System.Windows.Forms.Integration.WindowsFormsHost.EnableWindowsFormsInterop();
 			ComponentDispatcher.ThreadIdle -= ComponentDispatcher_ThreadIdle; // ensure we don't register twice
 			ComponentDispatcher.ThreadIdle += ComponentDispatcher_ThreadIdle;
@@ -83,7 +84,8 @@ namespace ICSharpCode.SharpDevelop.Commands
 			ParserService.StartParserThread();
 			
 			// finally run the workbench window ...
-			app.Run(WorkbenchSingleton.MainWindow);
+            if (app != null) 
+                app.Run(WorkbenchSingleton.MainWindow);
 			
 			// save the workbench memento in the ide properties
 			try {
