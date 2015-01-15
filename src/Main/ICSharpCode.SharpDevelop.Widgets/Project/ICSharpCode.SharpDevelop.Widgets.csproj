@@ -121,11 +121,7 @@
     <Page Include="themes\generic.xaml" />
     <Page Include="ZoomScrollViewer.xaml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Images" />
-    <Folder Include="MyersDiff" />
-    <Folder Include="themes" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\ZoomIn.png" />
     <Resource Include="Images\ZoomOut.png" />

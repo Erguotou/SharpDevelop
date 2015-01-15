@@ -38,6 +38,10 @@
     <PlatformTarget>x86</PlatformTarget>
     <FileAlignment>4096</FileAlignment>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
   <ItemGroup>
     <Reference Include="Chiron">
@@ -94,10 +98,14 @@
     <Compile Include="Src\ConstructorInfo.cs" />
     <Compile Include="Src\ConvertProjectToPythonProjectCommand.cs" />
     <Compile Include="Src\ConvertToPythonMenuCommand.cs" />
-    <Compile Include="Src\ApplicationSettingsPanel.cs" />
+    <Compile Include="Src\ApplicationSettingsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Configuration\AssemblyInfo.cs" />
     <Compile Include="Src\AddInOptions.cs" />
-    <Compile Include="Src\CompilingOptionsPanel.cs" />
+    <Compile Include="Src\CompilingOptionsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Src\IPythonResolver.cs" />
     <Compile Include="Src\MemberName.cs" />
     <Compile Include="Src\PythonBuiltInModuleMemberName.cs" />
@@ -255,11 +263,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Lib" />
-    <Folder Include="DLLs" />
-    <Folder Include="TestRunner" />
-    <Folder Include="Templates" />
-    <Folder Include="Resources" />
     <ProjectReference Include="..\..\..\..\..\Libraries\AvalonEdit\ICSharpCode.AvalonEdit\ICSharpCode.AvalonEdit.csproj">
       <Project>{6C55B776-26D4-4DB3-A6AB-87E783B2F3D1}</Project>
       <Name>ICSharpCode.AvalonEdit</Name>

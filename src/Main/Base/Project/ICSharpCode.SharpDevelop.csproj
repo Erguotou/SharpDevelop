@@ -201,26 +201,36 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Src\Gui\Components\LocalizedPropertyGrid\StringParserPropertyContainer.cs" />
-    <Compile Include="Src\Gui\Components\SideBar\TextEditorSideBar.cs" />
+    <Compile Include="Src\Gui\Components\SideBar\TextEditorSideBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Src\Gui\Components\StringListEditorDialog.xaml.cs" />
     <Compile Include="Src\Gui\Components\StringListEditorXaml.xaml.cs">
       <DependentUpon>StringListEditorXaml.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Src\Gui\CustomFocusManager.cs" />
-    <Compile Include="Src\Gui\Dialogs\AddOpenWithEntryDialog.cs" />
+    <Compile Include="Src\Gui\Dialogs\AddOpenWithEntryDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Src\Gui\Dialogs\AddOpenWithEntryDialog.Designer.cs">
       <DependentUpon>AddOpenWithEntryDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Src\Gui\Dialogs\AsynchronousWaitDialog.cs" />
+    <Compile Include="Src\Gui\Dialogs\AsynchronousWaitDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Src\Gui\Dialogs\AsynchronousWaitDialog.Designer.cs">
       <DependentUpon>AsynchronousWaitDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Src\Gui\Dialogs\AbstractAttachToProcessForm.cs" />
+    <Compile Include="Src\Gui\Dialogs\AbstractAttachToProcessForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Src\Gui\Dialogs\AbstractAttachToProcessForm.Designer.cs">
       <DependentUpon>AbstractAttachToProcessForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Src\Gui\Dialogs\ExtractInterfaceDialog.cs" />
+    <Compile Include="Src\Gui\Dialogs\ExtractInterfaceDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <None Include="ICSharpCode.SharpDevelop.addin" />
     <None Include="Src\Gui\Dialogs\ExtractInterfaceDialog.cs">
       <Link>Src\Services\RefactoringService\ExtractInterfaceDialog.cs</Link>
@@ -232,14 +242,16 @@
       <Link>Src\Services\RefactoringService\ExtractInterfaceDialog.Designer.cs</Link>
       <DependentUpon>ExtractInterfaceDialog.cs</DependentUpon>
     </None>
-    <Compile Include="Src\Gui\Dialogs\GotoDialog.cs">
+    <Compile Include="Src\Gui\Dialogs\GotoDialog.cs" />
+    <Compile Include="Src\Gui\Dialogs\NewProjectDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Src\Gui\Dialogs\NewProjectDialog.cs" />
     <Compile Include="Src\Gui\Dialogs\NewProjectDialog.Designer.cs">
       <DependentUpon>NewProjectDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Src\Gui\Dialogs\OpenWithDialog.cs" />
+    <Compile Include="Src\Gui\Dialogs\OpenWithDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Src\Gui\Dialogs\OpenWithDialog.Designer.cs">
       <DependentUpon>OpenWithDialog.cs</DependentUpon>
     </Compile>
@@ -366,12 +378,18 @@
     <Compile Include="Src\Gui\Dialogs\ReferenceDialog\ServiceReference\SvcUtilMessageView.cs" />
     <Compile Include="Src\Gui\Dialogs\ReferenceDialog\ServiceReference\SvcUtilPath.cs" />
     <Compile Include="Src\Gui\Dialogs\ReferenceDialog\ServiceReference\SvcUtilRunner.cs" />
-    <Compile Include="Src\Gui\Dialogs\ToolNotFoundDialog.cs" />
+    <Compile Include="Src\Gui\Dialogs\ToolNotFoundDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Src\Gui\Dialogs\ToolNotFoundDialog.Designer.cs">
       <DependentUpon>ToolNotFoundDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Src\Gui\Dialogs\OptionPanels\XmlFormsOptionPanel.cs" />
-    <Compile Include="Src\Gui\Dialogs\SolutionConfiguration\AddNewConfigurationDialog.cs" />
+    <Compile Include="Src\Gui\Dialogs\OptionPanels\XmlFormsOptionPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Src\Gui\Dialogs\SolutionConfiguration\AddNewConfigurationDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Src\Gui\Dialogs\SolutionConfiguration\AddNewConfigurationDialog.Designer.cs">
       <DependentUpon>AddNewConfigurationDialog.cs</DependentUpon>
     </Compile>
@@ -583,15 +601,11 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Src\Gui\Components\SideBar\SharpDevelopSideTabItem.cs" />
-    <Compile Include="Src\Gui\Components\StatusBar\SdStatusBar.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Src\Gui\Components\StatusBar\SdStatusBar.cs" />
     <Compile Include="Src\Gui\ContentInterfaces\IPrintable.cs" />
-    <Compile Include="Src\Gui\Dialogs\AbstractOptionPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="Src\Gui\Dialogs\AbstractOptionPanel.cs" />
     <Compile Include="Src\Gui\Dialogs\CommonAboutDialog.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Src\Gui\Dialogs\NewFileDialog.cs">
       <SubType>Form</SubType>
@@ -599,9 +613,7 @@
     <Compile Include="Src\Gui\Dialogs\SharpDevelopAboutPanels.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Src\Gui\Dialogs\TabbedOptions.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Src\Gui\Dialogs\TabbedOptions.cs" />
     <Compile Include="Src\Gui\Dialogs\WordCountDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -612,7 +624,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Src\Gui\Dialogs\ReferenceDialog\GacReferencePanel.cs">
-      <SubType>Component</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Src\Gui\Dialogs\ReferenceDialog\ProjectReferencePanel.cs">
       <SubType>Component</SubType>
@@ -792,7 +804,6 @@
     <Compile Include="Src\Gui\Pads\PropertyPad\IDEContainer.cs" />
     <Compile Include="Src\Gui\Pads\PropertyPad\PropertyContainer.cs" />
     <Compile Include="Src\Gui\Dialogs\OptionPanels\ProjectOptions\BuildEvents.cs">
-      <SubType>UserControl</SubType>
       <DependentUpon>BuildEvents.xaml</DependentUpon>
     </Compile>
     <Compile Include="Src\Gui\BrowserDisplayBinding\SchemeExtension.cs" />
@@ -823,15 +834,25 @@
     <Compile Include="Src\Services\RefactoringService\LocalVariableRefactoring.cs" />
     <Compile Include="Src\Services\RefactoringService\FindReferencesAndRenameHelper.cs" />
     <Compile Include="Src\Internal\Doozers\DirectoryDoozer.cs" />
-    <Compile Include="Src\Gui\Components\StringListEditor.cs" />
+    <Compile Include="Src\Gui\Components\StringListEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Src\Project\ConfigurationGuiBinding.cs" />
-    <Compile Include="Src\Project\ChooseStorageLocationButton.cs" />
+    <Compile Include="Src\Project\ChooseStorageLocationButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Src\Gui\Pads\ProjectBrowser\NodeBuilder\NodeBuilders.cs" />
-    <Compile Include="Src\Gui\Pads\TaskList\TaskView.cs" />
+    <Compile Include="Src\Gui\Pads\TaskList\TaskView.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Src\Gui\Pads\TaskList\TaskListPad.cs" />
     <Compile Include="Src\Gui\FormLocationHelper.cs" />
-    <Compile Include="Src\Gui\Dialogs\ReferenceDialog\AddWebReferenceDialog.cs" />
-    <Compile Include="Src\Gui\Dialogs\ReferenceDialog\WebServicesView.cs" />
+    <Compile Include="Src\Gui\Dialogs\ReferenceDialog\AddWebReferenceDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Src\Gui\Dialogs\ReferenceDialog\WebServicesView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Src\Project\Items\WebReferencesProjectItem.cs" />
     <Compile Include="Src\Gui\Pads\ProjectBrowser\NodeBuilder\WebReferenceNodeBuilder.cs" />
     <Compile Include="Src\Gui\Pads\ProjectBrowser\TreeNodes\WebReferencesFolderNode.cs" />
@@ -841,8 +862,12 @@
     <Compile Include="Src\Gui\Dialogs\TemplateCategoryComparer.cs" />
     <Compile Include="Src\Internal\Templates\TemplateCategorySortOrderFile.cs" />
     <Compile Include="Src\Gui\Dialogs\ReferenceDialog\HttpAuthenticationHeader.cs" />
-    <Compile Include="Src\Gui\Dialogs\ReferenceDialog\UserCredentialsDialog.cs" />
-    <Compile Include="Src\Gui\Dialogs\ReferenceDialog\WebServiceDiscoveryClientProtocol.cs" />
+    <Compile Include="Src\Gui\Dialogs\ReferenceDialog\UserCredentialsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Src\Gui\Dialogs\ReferenceDialog\WebServiceDiscoveryClientProtocol.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Src\Gui\Dialogs\ReferenceDialog\AsyncDiscoveryState.cs" />
     <Compile Include="Src\Gui\Dialogs\ReferenceDialog\DiscoveryNetworkCredential.cs" />
     <Compile Include="Src\Services\ProjectService\ProjectLoader.cs" />
@@ -885,15 +910,21 @@
     <Compile Include="Src\Gui\Dialogs\SolutionConfiguration\SolutionConfigurationEditor.Designer.cs">
       <DependentUpon>SolutionConfigurationEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Src\Gui\Dialogs\SolutionConfiguration\SolutionConfigurationEditor.cs" />
-    <Compile Include="Src\Gui\Dialogs\SharpDevelopColorDialog.cs" />
+    <Compile Include="Src\Gui\Dialogs\SolutionConfiguration\SolutionConfigurationEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Src\Gui\Dialogs\SharpDevelopColorDialog.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Src\Util\ExtensionMethods.cs" />
     <Compile Include="Src\Util\DebugTimer.cs" />
     <Compile Include="Src\Project\CustomTool.cs" />
     <Compile Include="Src\Gui\Dialogs\SolutionConfiguration\EditAvailableConfigurationsDialog.Designer.cs">
       <DependentUpon>EditAvailableConfigurationsDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Src\Gui\Dialogs\SolutionConfiguration\EditAvailableConfigurationsDialog.cs" />
+    <Compile Include="Src\Gui\Dialogs\SolutionConfiguration\EditAvailableConfigurationsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Src\Project\MSBuildBasedProject.cs" />
     <Compile Include="Src\Project\MSBuildItemDefinitionGroup.cs" />
     <Compile Include="Src\Project\AbstractProject.cs" />
@@ -985,21 +1016,6 @@
       <Name>ICSharpCode.Core</Name>
       <Private>False</Private>
     </ProjectReference>
-    <Folder Include="Src\Gui\Dialogs\ReferenceDialog\ServiceReference" />
-    <Folder Include="Src\Project\Behaviors" />
-    <Folder Include="Src\Project\PortableLibrary" />
-    <Folder Include="themes" />
-    <Folder Include="Src\Bookmarks\Pad\Controls" />
-    <Folder Include="Src\Editor\AvalonEdit" />
-    <Folder Include="Src\Editor\CodeCompletion" />
-    <Folder Include="Src\Editor\Commands" />
-    <Folder Include="Src\Editor\Search" />
-    <Folder Include="Src\Gui\Pads\TaskList" />
-    <Folder Include="Src\Services\Debugger\Tooltips" />
-    <Folder Include="Src\Services\RefactoringService\ContextActions" />
-    <Folder Include="Src\Util" />
-    <Folder Include="Src\Gui\Pads\ClassBrowser\NodeBuilder" />
-    <Folder Include="Src\Services\NavigationService" />
     <ProjectReference Include="..\..\ICSharpCode.Core.Presentation\ICSharpCode.Core.Presentation.csproj">
       <Project>{7E4A7172-7FF5-48D0-B719-7CD959DD1AC9}</Project>
       <Name>ICSharpCode.Core.Presentation</Name>
@@ -1015,7 +1031,6 @@
       <Name>ICSharpCode.SharpDevelop.Dom</Name>
       <Private>False</Private>
     </ProjectReference>
-    <Folder Include="Src\Gui\Dialogs\SolutionConfiguration" />
     <ProjectReference Include="..\..\ICSharpCode.SharpDevelop.Widgets\Project\ICSharpCode.SharpDevelop.Widgets.csproj">
       <Project>{8035765F-D51F-4A0C-A746-2FD100E19419}</Project>
       <Name>ICSharpCode.SharpDevelop.Widgets</Name>
