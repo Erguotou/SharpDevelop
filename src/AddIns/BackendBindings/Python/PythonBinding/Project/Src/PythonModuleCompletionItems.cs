@@ -115,7 +115,7 @@ namespace ICSharpCode.PythonBinding
 		
 		IReturnType CreateMethodReturnType(MethodInfo methodInfo)
 		{
-			DefaultClass declaringType = new DefaultClass(compilationUnit, methodInfo.ReturnType.FullName);
+			DefaultClass declaringType = new DefaultClass(compilationUnit, methodInfo.ReturnType.FullName ?? methodInfo.ReturnType.Name);
 			return new DefaultReturnType(declaringType);
 		}
 		
@@ -126,7 +126,7 @@ namespace ICSharpCode.PythonBinding
 		
 		IParameter ConvertParameter(ParameterInfo paramInfo, IMethod method)
 		{
-			DefaultClass c = new DefaultClass(compilationUnit, paramInfo.ParameterType.FullName);
+			DefaultClass c = new DefaultClass(compilationUnit, paramInfo.ParameterType.FullName ?? paramInfo.ParameterType.Name);
 			DefaultReturnType returnType = new DefaultReturnType(c);
 			return new DefaultParameter(paramInfo.Name, returnType, DomRegion.Empty);
 		}

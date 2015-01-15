@@ -78,6 +78,7 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
 			}
 			// LostKeyboardFocus seems to be more reliable than PreviewLostKeyboardFocus - see SD-1729
 			this.TextArea.LostKeyboardFocus += TextAreaLostFocus;
+            this.TextArea.LostFocus += TextArea_LostFocus;
 			this.TextArea.TextView.ScrollOffsetChanged += TextViewScrollOffsetChanged;
 			this.TextArea.DocumentChanged += TextAreaDocumentChanged;
 			if (parentWindow != null) {
@@ -93,7 +94,16 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
 			myInputHandler = new InputHandler(this);
 			this.TextArea.PushStackedInputHandler(myInputHandler);
 		}
-		
+
+        void TextArea_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (!CloseOnFocusLost)
+            {
+                Debug.WriteLine("Editor text area lost focus");
+                Close();
+            }
+        }
+
 		/// <summary>
 		/// Detaches events from the text area.
 		/// </summary>
@@ -103,6 +113,7 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
 				document.Changing -= textArea_Document_Changing;
 			}
 			this.TextArea.LostKeyboardFocus -= TextAreaLostFocus;
+            this.TextArea.LostFocus -= TextArea_LostFocus;
 			this.TextArea.TextView.ScrollOffsetChanged -= TextViewScrollOffsetChanged;
 			this.TextArea.DocumentChanged -= TextAreaDocumentChanged;
 			if (parentWindow != null) {

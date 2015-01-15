@@ -109,6 +109,7 @@ namespace ICSharpCode.PythonBinding
 					case '\r':
 					case '\t':
 					case ' ':
+                    case '(':
 						return offset + 1;
 				}
 				offset--;

@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Threading;
 using ICSharpCode.AvalonEdit.Document;
 using ICSharpCode.AvalonEdit.Editing;
+using System.Windows.Documents;
+using System.Windows.Media;
 
 namespace ICSharpCode.AvalonEdit.CodeCompletion
 {
@@ -35,7 +37,7 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
 		public CompletionWindow(TextArea textArea) : base(textArea)
 		{
 			// keep height automatic
-			this.CloseAutomatically = true;
+			this.CloseAutomatically = false;
 			this.SizeToContent = SizeToContent.Height;
 			this.MaxHeight = 300;
 			this.Width = 175;
@@ -70,10 +72,20 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
 			if (description != null) {
 				string descriptionText = description as string;
 				if (descriptionText != null) {
-					toolTip.Content = new TextBlock  {
-						Text = descriptionText,
+					var t = new TextBlock  {
 						TextWrapping = TextWrapping.Wrap
 					};
+                    var i = string.IsNullOrEmpty(item.Text) ? -1 : descriptionText.IndexOf(item.Text);
+                    if (i == 0) i = descriptionText.IndexOf(item.Text, 1);
+                    if (i >= 0)
+                    {
+                        t.Inlines.Add(new Run(descriptionText.Substring(0, i)) { FontStyle = FontStyles.Italic });
+                        t.Inlines.Add(new Run(item.Text) { FontWeight = FontWeights.Bold, Foreground = Brushes.DarkBlue });
+                        t.Inlines.Add(descriptionText.Substring(i + item.Text.Length));
+                    }
+                    else
+                        t.Text = descriptionText;
+                    toolTip.Content = t;
 				} else {
 					toolTip.Content = description;
 				}
